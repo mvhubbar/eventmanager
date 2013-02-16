@@ -1,0 +1,33 @@
+<div id="floatbox">
+	<strong>Meetings</strong><br />
+	<% @exibitormeetings.each do |m| %>
+		<i>Title: </i><%= m.name %> <br />
+		<i>Date: </i><%= m.start_date%><br /><br />
+	<% end %>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @exibitor.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @exibitor.description %>
+</p>
+
+<p>
+  <b>Sponsor:</b>
+  <%= @exibitor.sponsor.url %>
+</p>
+
+<p>
+  <b>Exibitor category:</b>
+  <%= @exibitor.exibitor_category.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_exibitor_path(@exibitor) %> |
+<%= link_to 'Back', exibitors_path %>

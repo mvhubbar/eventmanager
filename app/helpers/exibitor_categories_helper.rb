@@ -1,0 +1,2 @@
+module ExibitorCategoriesHelper
+end

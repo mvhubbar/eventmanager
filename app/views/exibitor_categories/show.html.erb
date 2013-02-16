@@ -1,0 +1,16 @@
+<div id="floatbox">
+	<strong>Exibitors</strong><br />
+	<% @exibitors_in_category.each do |e| %>
+		<%= e.name %> <br /><br />
+	<% end %>
+</div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @exibitor_category.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_exibitor_category_path(@exibitor_category) %> |
+<%= link_to 'Back', exibitor_categories_path %>

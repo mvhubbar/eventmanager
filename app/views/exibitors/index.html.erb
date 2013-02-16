@@ -1,0 +1,29 @@
+<h1>Listing exibitors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Sponsor</th>
+    <th>Exibitor category</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @exibitors.each do |exibitor| %>
+  <tr>
+    <td><%= exibitor.name %></td>
+    <td><%= exibitor.description %></td>
+    <td><%= exibitor.sponsor.url %></td>
+    <td><%= exibitor.exibitor_category.name %></td>
+    <td><%= link_to 'Show', exibitor %></td>
+    <td><%= link_to 'Edit', edit_exibitor_path(exibitor) %></td>
+    <td><%= link_to 'Destroy', exibitor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Exibitor', new_exibitor_path %>

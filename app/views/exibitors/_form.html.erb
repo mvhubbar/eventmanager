@@ -1,0 +1,33 @@
+<%= form_for(@exibitor) do |f| %>
+  <% if @exibitor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exibitor.errors.count, "error") %> prohibited this exibitor from being saved:</h2>
+
+      <ul>
+      <% @exibitor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :sponsor_id %><br />
+    <%= f.select :sponsor_id, Sponsor.all.collect {|sponsor| [ sponsor.url, sponsor.id ] } %>
+  </div>
+  <div class="field">
+    <%= f.label :exibitor_category_id %><br />
+    <%= f.select :exibitor_category_id, ExibitorCategory.all.collect {|exibitor_category| [ exibitor_category.name, exibitor_category.id ] } %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

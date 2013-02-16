@@ -1,0 +1,37 @@
+<div id="floatbox">
+	<strong>Venue</strong><br />
+	<%= @meetingvenue.name %> <br />
+	<%= @meetingvenue.address %><br />
+	<%= @meetingvenue.city %>
+	<%= @meetingvenue.state %>
+	<%= @meetingvenue.zip %><br /><br />
+	<strong>Sponsors</strong><br />
+	<% @meetingsponsors.each do |s| %>
+		<%= s.url %> <br />
+	<% end %>
+</div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @meeting.name %>
+</p>
+
+<p>
+  <b>Venue:</b>
+  <%= @meeting.venue.name %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @meeting.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @meeting.end_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_meeting_path(@meeting) %> |
+<%= link_to 'Back', meetings_path %>

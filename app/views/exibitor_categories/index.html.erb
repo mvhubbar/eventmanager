@@ -1,0 +1,23 @@
+<h1>Listing exibitor_categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @exibitor_categories.each do |exibitor_category| %>
+  <tr>
+    <td><%= exibitor_category.name %></td>
+    <td><%= link_to 'Show', exibitor_category %></td>
+    <td><%= link_to 'Edit', edit_exibitor_category_path(exibitor_category) %></td>
+    <td><%= link_to 'Destroy', exibitor_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Exibitor category', new_exibitor_category_path %>

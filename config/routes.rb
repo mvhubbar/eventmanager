@@ -1,4 +1,7 @@
 Eventmanager::Application.routes.draw do
+  resources :contests
+
+
   get "home/index"
 
   resources :venues

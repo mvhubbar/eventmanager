@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :present_to_win %><br />
-    <%= f.check_box :present_to_win %>
+    <%= f.check_box :present_to_win %>Yes
   </div>
   <div class="field">
     <%= f.label :start_date %><br />
@@ -29,11 +29,11 @@
   </div>
   <div class="field">
     <%= f.label :sponsor_id %><br />
-    <%= f.number_field :sponsor_id %>
+    <%= f.select :sponsor_id, Sponsor.all.collect {|sponsor| [ sponsor.url, sponsor.id ] } %>
   </div>
   <div class="field">
     <%= f.label :meeting_id %><br />
-    <%= f.number_field :meeting_id %>
+    <%= f.select :meeting_id, Meeting.all.collect {|meeting| [ meeting.name, meeting.id ] } %>
   </div>
   <div class="actions">
     <%= f.submit %>
